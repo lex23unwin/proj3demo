@@ -201,7 +201,7 @@ function removeFromCart(eachCategoryEntry)
 
 function incrementCartItem(eachCategoryEntry)
 {
-    let mainCartOrderContainer = document.querySelector("main-cart-order-container");
+    let mainCartOrderContainer = document.querySelector(".main-cart-order-container");
 
     const mainCartEntries = mainCartOrderContainer.querySelectorAll(".main-cart-entry");
 
@@ -220,7 +220,7 @@ function incrementCartItem(eachCategoryEntry)
 
 function decrementCartItem(eachCategoryEntry)
 {
-    let mainCartOrderContainer = document.querySelector("main-cart-order-container");
+    let mainCartOrderContainer = document.querySelector(".main-cart-order-container");
 
     const mainCartEntries = mainCartOrderContainer.querySelectorAll(".main-cart-entry");
 
@@ -232,7 +232,7 @@ function decrementCartItem(eachCategoryEntry)
 
         if (entryTitle === eachCategoryEntryTitle)
         {
-            entryQuantity -= 1;
+            entryQuantity.textContent = parseInt(entryQuantity.textContent) - 1;
         }
     })
 }
