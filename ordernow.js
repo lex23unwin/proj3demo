@@ -92,23 +92,31 @@ categories.forEach((eachCategory) =>
     categoryContainers.forEach((eachCategoryContainer) => 
     {
         const decrementButton = eachCategoryContainer.querySelector('.decrement-button');
-        const amountCounter = eachCategoryContainer.querySelector('.amount-counter');
+        let amountCounter = eachCategoryContainer.querySelector('.amount-counter');
         const incrementButton = eachCategoryContainer.querySelector('.increment-button');
 
         decrementButton.id = `${idOfCategoryContainer}-minus-${i}`;
         amountCounter.id = `${idOfCategoryContainer}-value-${i}`;
         incrementButton.id = `${idOfCategoryContainer}-plus-${i}`;
 
+        decrementButton.style.cursor = "pointer";
+        incrementButton.style.cursor = "pointer";
+
         const itemName = eachCategoryContainer.querySelector(".menu-body-entry-title").textContent
 
         decrementButton.addEventListener("click", () => 
         {
-            console.log(itemName);
+            let value = parseInt(amountCounter.textContent);
+            if (value >= 1)
+            {
+                amountCounter.textContent = (value - 1).toString();
+            }
         })
 
         incrementButton.addEventListener("click", () => 
         {
-            console.log(itemName);
+            let value = parseInt(amountCounter.textContent);
+            amountCounter.textContent = (value + 1).toString();
         })
 
         i += 1;
