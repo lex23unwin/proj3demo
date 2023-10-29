@@ -1,13 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    //inputs
+
     const displayContrast = document.querySelector('#display-contrast');
     const fontSize = document.querySelector('#font-size');
     const mouseSensitivity = document.querySelector('#mouse-sensitivity');
+
+    //update value and store in local storage to maintain continuity between settings pages
 
     const updateValue = (element, valueElement) => 
     {
         valueElement.textContent = element.value;
         localStorage.setItem(element.id, element.value);
     };
+
+    //change value and display on changed input
 
     displayContrast.addEventListener('input', () => 
     {
